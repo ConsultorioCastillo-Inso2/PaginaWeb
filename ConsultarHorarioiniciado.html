@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi página web</title>
+  <link rel="stylesheet" type="text/css" href="styles3.css">
+  <link rel="icon" href="img4/logo-icon.ico">
+</head>
+<body>
+    <div id="inicio">
+  <header>
+    <div class="logo">
+      <!-- Aquí puedes colocar el código HTML para tu logo -->
+      <a href="SesionIniciadaCliente.html"><img src="img4\logo.png" alt="Logo de la página"></a>
+    </div>
+    <div>
+    <nav class="options">
+      <a href="SesionIniciadaCliente.html">Inicio</a>
+      <a href="ConsultarHorarioiniciado.html">Horarios Disponibles</a>
+    </nav>
+    </div>
+    
+  </header>
+
+ 
+  <div class="date">
+    <div class="button-container">
+    <button class="button" onclick="previousWeek()">&lt;</button>
+    <h2 id="currentDate">Semana Actual</h2>
+    <button class="button" onclick="nextWeek()">&gt;</button>
+  </div>
+</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Hora</th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miércoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+        <th>Sábado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> MAÑANA</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+        <tr>
+        <td>8:00am - 8:50am</td>
+        <td class="ocupado"></td>
+        <td class="disponible"></td>
+        <td class="disponible"></td>
+        <td class="ocupado"></td>
+        <td class="disponible"></td>
+        <td class="ocupado"></td>
+      </tr>
+      <tr>
+        <td>9:00am - 9:50am</td>
+        <td class="ocupado"></td>
+        <td class="disponible"></td>
+        <td class="ocupado"></td>
+        <td class="ocupado"></td>
+        <td class="disponible"></td>
+        <td class="ocupado"></td>
+      </tr>
+      <tr>
+        <td>10:00am - 10:50am</td>
+        <td class="disponible"></td>
+        <td class="ocupado"></td>
+        <td class="ocupado"></td>
+        <td class="ocupado"></td>
+        <td class="ocupado"></td>
+        <td class="disponible"></td>
+      </tr>
+      <tr>
+        <td>11:00am - 12:00pm</td>
+        <td class="ocupado"></td>
+        <td class="ocupado"></td>
+        <td class="disponible"></td>
+        <td class="ocupado"></td>
+        <td class="disponible"></td>
+        <td class="ocupado"></td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> TARDE</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+
+      <tr>
+        <td>3:00pm - 3:50pm</td>
+        <td class="ocupado"></td>
+        <td class="ocupado"></td>
+        <td class="ocupado"></td>
+        <td class="disponible"></td>
+        <td class="disponible"></td>
+        <td class="ocupado"></td>
+      </tr>
+      <tr>
+        <td>4:00pm - 4:50pm</td>
+        <td class="disponible"></td>
+        <td class="ocupado"></td>
+        <td class="ocupado"></td>
+        <td class="disponible"></td>
+        <td class="disponible"></td>
+        <td class="ocupado"></td>
+      </tr>
+      <tr>
+        <td>5:00pm - 5:50pm</td>
+        <td class="ocupado"></td>
+        <td class="ocupado"></td>
+        <td class="ocupado"></td>
+        <td class="ocupado"></td>
+        <td class="ocupado"></td>
+        <td class="ocupado"></td>
+      </tr>
+      <tr>
+        <td>6:00pm - 7:00pm</td>
+        <td class="ocupado"></td>
+        <td class="disponible"></td>
+        <td class="disponible"></td>
+        <td class="ocupado"></td>
+        <td class="disponible"></td>
+        <td class="disponible"></td>
+      </tr>
+      <!-- Continúa con las filas para las demás horas -->
+    </tbody>
+  </table>
+  <!---letenda-->
+  <div class="leyenda">
+    <span class="disponible"></span> Disponible
+    <span class="ocupado"></span> Ocupado
+  </div>
+</div>
+
+  <script>
+    // Función para abrir la ventana emergente
+    function openModal(modalType) {
+      var modal;
+      if (modalType === 'login') {
+        modal = document.getElementById("loginModal");
+      } else if (modalType === 'register') {
+        modal = document.getElementById("registerModal");
+        // Mostrar el primer paso del registro y ocultar el segundo paso
+        document.getElementById("step1").style.display = "block";
+        document.getElementById("step2").style.display = "none";
+      }
+      modal.style.display = "block";
+    }
+
+    // Función para cerrar la ventana emergente
+    function closeModal(modalType) {
+      var modal;
+      if (modalType === 'login') {
+        modal = document.getElementById("loginModal");
+      } else if (modalType === 'register') {
+        modal = document.getElementById("registerModal");
+      }
+      modal.style.display = "none";
+    }
+
+    // Función para avanzar al siguiente paso del registro
+    function nextStep() {
+      document.getElementById("step1").style.display = "none";
+      document.getElementById("step2").style.display = "block";
+    }
+        // Obtener la fecha actual
+        var currentDate = new Date();
+    var currentDateCopy = new Date(currentDate);
+
+    // Variables para limitar la navegación
+    var today = new Date();
+    var maxDate = new Date(today);
+    maxDate.setDate(today.getDate() + 15);
+
+    // Función para mostrar la semana actual
+    function showCurrentWeek() {
+      var scheduleTable = document.getElementById("scheduleTable");
+      var currentDateElement = document.getElementById("currentDate");
+
+      var firstDay = new Date(currentDate);
+      firstDay.setDate(currentDate.getDate() - currentDate.getDay() + 1);
+
+      var lastDay = new Date(firstDay);
+      lastDay.setDate(firstDay.getDate() + 6);
+
+      // Mostrar la fecha del primer día de la semana actual
+      currentDateElement.innerText = formatDate(firstDay) + " al " + formatDate(lastDay);
+
+      // Actualizar el contenido del horario con los datos correspondientes
+      // Puedes agregar tu lógica para llenar el horario aquí
+
+      // Ejemplo de llenado de celdas con datos estáticos
+      var cells = scheduleTable.getElementsByTagName("td");
+      for (var i = 0; i < cells.length; i++) {
+        cells[i].innerText = "Datos del horario";
+      }
+    }
+
+    // Función para avanzar a la siguiente semana
+    function nextWeek() {
+      if (currentDateCopy <= maxDate) {
+        currentDateCopy.setDate(currentDateCopy.getDate() + 7);
+        currentDate = new Date(currentDateCopy);
+        showCurrentWeek();
+      }
+    }
+
+    // Función para retroceder a la semana anterior
+    function previousWeek() {
+      if (currentDate > today) {
+        currentDateCopy.setDate(currentDateCopy.getDate() - 7);
+        currentDate = new Date(currentDateCopy);
+        showCurrentWeek();
+      }
+    }
+
+    // Función para formatear la fecha como "DD/MM/YYYY"
+    function formatDate(date) {
+      var day = date.getDate();
+      var month = date.getMonth() + 1;
+      var year = date.getFullYear();
+
+      return (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') + month + '/' + year;
+    }
+
+    // Mostrar la semana actual al cargar la página
+    showCurrentWeek();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Consultorio Castillo | Realizar Pago</title>
+  <link rel="stylesheet" type="text/css" href="styles4.css">
+  <link rel="icon" href="img4/logo-icon.ico">
+</head>
+<body>
+    
+    <style>
+      
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .accordion {
+            width: 100%;
+        }
+
+        .accordion-item {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .accordion-header {
+            background-color: #f5f5f5;
+            padding: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .accordion-body {
+            padding: 10px;
+            display: none;
+        }
+
+        .modificar-btn {
+            margin-top: 10px;
+        }
+        .modificar-btn {
+            margin-top: 10px;
+        }
+    </style>
+
+    <header>
+        <div class="logo">
+          <!-- Aquí puedes colocar el código HTML para tu logo -->
+          <a href="SesionIniciadaCliente.html"><img src="img4\logo.png" alt="Logo de la página"></a>
+        </div>
+        <nav class="options">
+          <a href="SesionIniciadaCliente.html">Inicio</a>
+          <a href="#">Consultar Horario</a>
+        </nav>
+        <div class="profile-menu">
+          <div class="profile-logo">
+            <img src="img4/user-profile.png" alt="Logo de perfil" class="profile-image">
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="index.html">Cerrar sesión</a></li>
+                <li><a href="Editar_Datos.html">Editar perfil</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-trigger"></div>
+          </div>
+        </div>
+    </header>
+      
+  <div class="modal-content1" style="border: none;  margin-top: 20px; justify-content: center; align-items: center; height: 100%; ">
+    <div class="panel panel-default" style="max-width: 500px;">
+    
+      <div class="panel-body">
+        <h1>Examinar Citas Hechas</h1>
+
+    <h2>Listado de Citas</h2>
+    <div class="accordion" id="citas">
+        <!-- Ejemplo de cita -->
+               <!-- Cita 1: Pendiente -->
+               <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(1)">
+                    Cita - Fecha: 12/12/2023, Hora: 3:00pm
+                </div>
+                <div class="accordion-body" id="accordion-body-1">
+                    <p>Datos del Cliente: Nombre: Angello Fabian, Edad: 25</p>
+                    <p>Motivo de la Cita: Consulta médica general</p>
+                    <p>Estado: Pendiente</p>
+                </div>
+            </div>
+    
+            <!-- Cita 2: Atendido -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(2)">
+                    Cita - Fecha: 15/10/2023, Hora: 11:00am
+                </div>
+                <div class="accordion-body" id="accordion-body-2">
+                    <p>Datos del Cliente: Nombre: Angello Fabian, Edad: 25</p>
+                    <p>Motivo de la Cita: Consulta médica general</p>
+                    <p>Estado: Atendido</p>
+                </div>
+            </div>
+
+        <!-- Otras citas ... -->
+
+    </div>
+
+    <script>
+        function toggleAccordion(citaId) {
+            const accordionBody = document.getElementById(`accordion-body-${citaId}`);
+            const modificarBtn = document.getElementById(`modificar-btn-${citaId}`);
+
+            if (accordionBody.style.display === 'none') {
+                accordionBody.style.display = 'block';
+                modificarBtn.style.display = 'inline';
+            } else {
+                accordionBody.style.display = 'none';
+                modificarBtn.style.display = 'none';
+            }
+        }
+
+        function modificarCita(citaId) {
+            // Lógica para redireccionar a la página de modificación de la cita
+            // Aquí puedes redirigir a la página que desees utilizando window.location.href
+            // Ejemplo: window.location.href = 'modificar-cita.php?id=' + citaId;
+        }
+    </script>
+      
+        
+      </div>
+    </div>
+  </div>
+  
+    
+
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

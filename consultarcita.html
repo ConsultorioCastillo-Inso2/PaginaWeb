@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Consultorio Castillo | Realizar Pago</title>
+  <link rel="stylesheet" type="text/css" href="styles9.css">
+  <link rel="icon" href="img9/logo-icon.ico">
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <!-- Aquí puedes colocar el código HTML para tu logo -->
+          <a href="InicioSesionMedico.html"><img src="img4\logo.png" alt="Logo de la página"></a>
+        </div>
+        <nav class="options">
+          <a href="InicioSesionMedico.html">Inicio</a>
+        </nav>
+        <div class="profile-menu">
+          <div class="profile-logo">
+            <img src="img9/user-profile.png" alt="Logo de perfil" class="profile-image">
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="index.html">Cerrar sesión</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-trigger"></div>
+          </div>
+        </div>
+        
+        <style>
+            /* Estilos CSS aquí */
+            .accordion {
+                background-color: #ffffff;
+                color: #333;
+                cursor: pointer;
+                padding: 10px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 16px;
+                transition: 0.4s;
+            }
+    
+            .active {
+                background-color: #ccc;
+            }
+    
+            .panel {
+                padding: 10px;
+                background-color: white;
+                display: none;
+                overflow: hidden;
+            }
+        </style>
+      </header>
+     
+ 
+  <div class="modal-content1" style="border: none; display: flex; margin-top: 20px; justify-content: center; align-items: center; height: 100%; ">
+    
+      <div class="panel-body">
+        
+        <h1>Lista de Citas</h1>
+
+        <div class="accordion" onclick="toggleAccordion('cita1')">
+            <strong>Fecha:</strong> 2023-06-20 | <strong>Hora:</strong> 09:00 AM | <strong>Cliente:</strong> Angello Fabian | <strong>Estado:</strong> Pendiente
+        </div>
+        <div class="panel" id="cita1">
+            <p><strong>Datos del Cliente:</strong> Nombre: Angello Fabian | Teléfono: 988-345-125</p>
+            <p><strong>Información Adicional:</strong> Alergias: Ninguna | Enfermedades: Ninguna</p>
+            <button onclick="marcarAtendida('cita1')">Marcar como atendida</button>
+        </div>
+    
+        <div class="accordion" onclick="toggleAccordion('cita2')">
+            <strong>Fecha:</strong> 2023-06-21 | <strong>Hora:</strong> 03:00 PM | <strong>Cliente:</strong> Jane Smith | <strong>Estado:</strong> Pendiente
+        </div>
+        <div class="panel" id="cita2">
+            <p><strong>Datos del Cliente:</strong> Nombre: Jane Smith | Teléfono: 987-654-3210</p>
+            <p><strong>Información Adicional:</strong> Alergias: Penicilina | Enfermedades: Hipertensión</p>
+            <button onclick="marcarAtendida('cita2')">Marcar como atendida</button>
+        </div>
+    
+        <script>
+            function toggleAccordion(citaId) {
+                var panel = document.getElementById(citaId);
+                panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
+            }
+    
+            function marcarAtendida(citaId) {
+                // Realizar la lógica de actualización del estado de la cita en el backend aquí
+    
+                // Actualizar el estado en el acordeón
+                var accordion = document.getElementById(citaId);
+                var estadoElement = accordion.querySelector('strong[data-type="estado"]');
+                estadoElement.innerHTML = 'Estado: Atendida';
+            }
+        </script>
+      </div>
+   
+  </div>
+  
+    
+
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+ 
+  
+
+
+
+</body>
+</html>

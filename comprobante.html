@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comprobante de Pago</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      background-color: #ffffff;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .info {
+      margin-top: 30px;
+    }
+
+    .info label {
+      font-weight: bold;
+    }
+
+    .info p {
+      margin: 5px 0;
+    }
+
+    .details {
+      margin-top: 30px;
+    }
+
+    .details table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .details th,
+    .details td {
+      padding: 8px;
+      border: 1px solid #000000;
+      text-align: left;
+    }
+
+    .total {
+      margin-top: 30px;
+      text-align: right;
+    }
+
+    .total label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Comprobante de Pago</h1>
+
+    <div class="info">
+      <p><label>N° Orden:</label> 000215</p>
+      <p><label>Nombres:</label> Juan Luis</p>
+      <p><label>Apellidos:</label> Placencia Torres</p>
+      <p><label>DNI:</label> 75245201</p>
+      <p><label>Fecha de consulta:</label> 10 de mayo de 2023</p>
+      <p><label>Doctor:</label> Dr. Carlos Sánchez</p>
+    </div>
+
+    <div class="details">
+      <table>
+        <tr>
+          <th>Concepto</th>
+          <th>Descripción</th>
+          <th>Monto</th>
+        </tr>
+        <tr>
+          <td>Consulta médica</td>
+          <td>Consulta general</td>
+          <td>s/100.00</td>
+        </tr>
+        <!-- Puedes agregar más filas si hay más conceptos -->
+      </table>
+    </div>
+
+    <div class="total">
+      <p><label>Total:</label> s/100.00</p>
+    </div>
+  </div>
+  <a style="text-align: center" href="SesionIniciadaCliente.html">Volver a inicio</a>
+</body>
+</html>

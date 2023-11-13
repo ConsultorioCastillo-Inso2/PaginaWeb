@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Consultorio Castillo | Realizar Pago</title>
+  <link rel="stylesheet" type="text/css" href="styles7.css">
+  <link rel="icon" href="img4/logo-icon.ico">
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <!-- Aqui puedes colocar el codigo HTML para tu logo -->
+          <a href="SesionIniciadaCliente.html"><img src="img4\logo.png" alt="Logo de la página"></a>
+        </div>
+        <div>
+            <nav class="options">
+              <a href="SesionIniciadaCliente.html">Inicio</a>
+              <a href="ConsultarHorarioiniciado.html">Horarios Disponibles</a>
+            </nav>
+            </div>
+        <div>
+            <div>
+                <div class="profile-menu">
+                    <div class="profile-logo">
+                      <img src="img7/user-profile.png" alt="Logo de perfil" class="profile-image">
+                      <div class="dropdown-menu">
+                        <ul>
+                         <li><a href="Editar_Datos.html">Editar perfil</a></li>
+                         <li><a href="PaginaInicio.html">Cerrar sesion</a></li>
+                        </ul>
+                      </div>
+                      <div class="dropdown-trigger"></div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </header>
+      
+  <div class="modal-content1" style="border: none; display: flex; margin-top: 20px; justify-content: center; align-items: center; height: 100%;">
+    <div class="panel panel-default" style="max-width: 500px;">
+      <div class="panel-heading">
+        <h3 class="panel-title">Selecciona el metodo de pago</h3>
+      </div>
+      <div class="panel-body">
+        <form action="comprobante.html"> 
+          <div class="form-group">
+            <label for="pasarela" style="margin-bottom: 1rem; ">Pasarela de Pago</label>
+            <div class="card-images">
+              <img src="img7/logo-American-Express.png" alt="Tarjeta 1" class="card-image" style="width: 100px;">
+              <img src="img7/targets-visa-mc.png" alt="Tarjeta 1" class="card-image" style="width: 125px;">
+ 
+            </div>
+            <select class="form-control" id="pasarela" name="pasarela" style="margin-block: 1rem;">
+              <option value="">Selecciona una pasarela de pago</option>
+              <option value="paypal">American Express</option>
+              <option value="stripe">Visa</option>
+              <option value="mercadopago">MasterCard</option>
+            </select>
+          </div>
+          <div class="form-group p3">
+            <label for="numero_tarjeta">Numero de Tarjeta</label>
+            <input required type="number" class="form-control" id="numero_tarjeta" name="numero_tarjeta" placeholder="Ingrese el numero de tarjeta" minlength="16">
+          </div>
+          <div class="form-group">
+            <label for="nombre_tarjeta">Nombre del titular de la Tarjeta</label>
+            <input required type="text" class="form-control" id="nombre_tarjeta" name="nombre_tarjeta" placeholder="Ingrese el nombre en la tarjeta" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Ingrese solo letras (sin números ni caracteres especiales)">
+          </div>
+          
+          <div class="form-group p3">
+            <label for="fecha_vencimiento">Fecha de Vencimiento</label>
+            <input required type="date" class="form-control" id="fecha_vencimiento" name="fecha_vencimiento" placeholder="MM/AA">
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input required type="number" class="form-control" id="cvv" name="cvv" placeholder="Ingrese el codigo de seguridad" minlength="3">
+          </div>
+          <div style="display: flex; justify-content: center;">
+            <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Realizar Pago</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+  
+
+</body>
+</html>

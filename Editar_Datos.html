@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modificar datos del usuario</title>
+  <link rel="stylesheet" type="text/css" href="styles_editar.css">
+  <link rel="icon" href="img4/logo-icon.ico">
+</head>
+<body>
+   <header>
+        <div class="logo">
+          <!-- Aquí puedes colocar el código HTML para tu logo -->
+          <a href="SesionIniciadaCliente.html"><img src="img4\logo.png" alt="Logo de la página"></a>
+        </div>
+        <nav class="options">
+          <a href="SesionIniciadaCliente.html">Inicio</a>
+      <a href="ConsultarHorarioiniciado.html">Horarios Disponibles</a>
+        </nav>
+    </header>  
+  <div class="container">
+    <h2>Perfil</h2>
+    <div class="user-info">
+      <div>
+        <label>Nombre:</label>
+        <span id="nombre"></span>
+        <input type="text" id="nombre-input" class="input-field" readonly>
+      </div>
+      <div>
+        <label>Correo electronico:</label>
+        <span id="correo"></span>
+        <input type="email" id="correo-input" class="input-field" readonly>
+      </div>
+
+      <div>
+        <label>Contrasena:</label>
+        <span id="contraseña"></span>
+        <input type="password" id="contraseña-input" class="input-field" readonly>
+      </div>
+      <div>
+        <label>Fecha de nacimiento:</label>
+        <span id="fecha"></span>
+        <input type="date" id="correo-input" class="input-field">
+      </div>
+      <div>
+        <label>Enfermedades preexistentes:</label>
+        <span id="enfermedades"></span>
+        <textarea id="enfermedades-input" class="input-field" readonly></textarea>
+      </div>
+      <div>
+        <label>Alergias:</label>
+        <span id="alergias"></span>
+        <textarea id="alergias-input" class="input-field" readonly></textarea>
+      </div>
+      <div>
+        <label>Numero de telefono:</label>
+        <span id="numerotelefono"></span>
+        <input type="number" id="numerotelefono-input" class="input-field" readonly>
+      </div>
+      <div>
+        <label>Talla (cm):</label>
+        <span id="talla"></span>
+        <input type="number" id="talla-input" class="input-field" readonly>
+      </div>
+      <div>
+        <label>Peso (Kg):</label>
+        <span id="peso"></span>
+        <input type="number" id="peso-input" class="input-field" readonly>
+      </div>
+    </div>
+    <div class="edit-section">
+      <button id="edit-button">Editar></button>
+      <button id="save-button">Guardar</button>
+    </div>
+  </div>
+  <div class="container1">
+
+  </div>
+
+  <script>
+    // Generar datos aleatorios originales
+var nombre = "Angello Fabian Sanchez";
+var correo = "angello@gmail.com";
+var contraseña = "minotaes06xd";
+var fecha = "1998-02-03";
+var enfermedades = "ninguna";
+var numerotelefono = "988345125";
+var talla = 150;
+var peso = 64;
+
+// Actualizar los valores iniciales
+document.getElementById('nombre').textContent = nombre;
+document.getElementById('correo').textContent = correo;
+document.getElementById('contraseña').textContent = contraseña;
+document.getElementById('fecha').textContent = fecha;
+document.getElementById('enfermedades').textContent = enfermedades;
+document.getElementById('numerotelefono').textContent = numerotelefono;
+document.getElementById('talla').textContent = talla;
+document.getElementById('peso').textContent = peso;
+
+// Escuchar evento de clic en el botón "Editar"
+document.getElementById('edit-button').addEventListener('click', function() {
+  var inputFields = document.getElementsByClassName('input-field');
+  
+  for (var i = 0; i < inputFields.length; i++) {
+    inputFields[i].readOnly = false;
+    inputFields[i].style.display = 'block';
+    inputFields[i].value = inputFields[i].previousElementSibling.textContent;
+  }
+});
+
+// Escuchar evento de clic en el botón "Guardar"
+document.getElementById('save-button').addEventListener('click', function() {
+  var inputFields = document.getElementsByClassName('input-field');
+  
+  for (var i = 0; i < inputFields.length; i++) {
+    inputFields[i].readOnly = true;
+    inputFields[i].style.display = 'none';
+    inputFields[i].previousElementSibling.textContent = inputFields[i].value;
+  }
+});
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+   /* Estilos para el encabezado */
+   header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 80px;
+  }
+  h3{
+    font-size: 50px;
+    color: rgb(34, 42, 53);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  p{
+    font-size: 18px;
+    font-family: cursive;
+  }
+
+  /* Estilos para el logo */
+  .logo img {
+    max-width: 100%;
+    height: 80px;
+  }
+
+  /* Estilos para las opciones del centro */
+  .options {
+    display: flex;
+    justify-content: center;
+  }
+
+  .options a {
+    margin: 0 10px;
+  }
+
+  /* Estilos para el botón de iniciar sesión y registrarse */
+  .btn {
+    padding: 12px 20px;
+    background-color: rgba(74, 202, 203, 0.4);
+    color: rgb(31, 78, 121);
+    border-color: rgb(74, 202, 203);
+    border:vh;
+    border-radius: 4px;
+    cursor: pointer;
+    font-style: italic;
+  }
+  .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 20px;
+    }
+
+  /* Estilos para el cuadro emergente */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius: 5px;
+  }
+  .modal-content1 {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 500px;
+    height: 550px;
+    border-radius: 5px;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+    .modal-body {
+      padding: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="password"] {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: rgb(31, 78, 121);
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 310px;
+      
+    }
+    .form-inline {
+      display: flex;
+      align-items: center;
+      gap: 120px;
+    }
+
+    .form-group button:hover {
+      background-color: rgb(161, 204, 244);
+      color: #000;
+    }
+
+  /* Estilos para el cuerpo */
+  .container {
+    display: flex;
+    padding: 50px;
+    height: 550px;
+    
+  }
+  a{
+    color: black;
+    size: 300px;
+  }
+
+  .person-info {
+    flex: 0.8;
+  }
+
+  .person-info h3 {
+    margin-top: 2;
+  }
+
+  .person-info p {
+    margin-bottom: 0;
+  }
+
+  .person-photo {
+    flex: 1;
+    text-align: right;
+  }
+
+  .person-photo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  
+
+  header{
+    background-color: #fff;
+  }
+
+  body {
+    background: linear-gradient(to bottom, #aedcf9, #f8f8f8);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  .person-info button {
+    display: block;
+    margin: 0 auto;
+    padding: 20px 70px;
+    background-color:rgb(31, 78, 121);
+    font-size: large;
+    color: #fff;
+    border: none;
+    
+    cursor: pointer;
+  }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bienvenido Administrador</title>
+  <link rel="stylesheet" type="text/css" href="styles11.css">
+  <link rel="icon" href="img4/logo-icon.ico">
+</head>
+<body>
+    <div id="inicio">
+  <header>
+    <div class="logo">
+      <!-- Aquí puedes colocar el código HTML para tu logo -->
+      <a href="InicioSesionMedico.html"><img src="img11\logo.png" alt="Logo de la página"></a>
+    </div>
+    <div>
+        <nav class="options">
+          <a href="InicioSesionMedico.html">Inicio</a>
+        </nav>
+        </div>
+    <div>
+        <div>
+            <div class="profile-menu">
+                <div class="profile-logo">
+                  <img src="img11/user-profile.png" alt="Logo de perfil" class="profile-image">
+                  <div class="dropdown-menu">
+                    <ul>
+                     <li><a href="index.html">Cerrar sesion</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-trigger"></div>
+                </div>
+              </div>
+        </div>
+    </div>
+  </header>
+ 
+  <div class="container">
+    <nav class="person-info">
+      <a class="btn" href="ModificarHorario.html">Modificar Horario</a>
+      <a class="btn" href="consultarcita.html">Consultar Citas</a>
+    </nav>
+  </div>
+
+</div>
+
+  <script>
+    // Función para abrir la ventana emergente
+    function openModal(modalType) {
+      var modal;
+      if (modalType === 'login') {
+        modal = document.getElementById("loginModal");
+      } else if (modalType === 'register') {
+        modal = document.getElementById("registerModal");
+        // Mostrar el primer paso del registro y ocultar el segundo paso
+        document.getElementById("step1").style.display = "block";
+        document.getElementById("step2").style.display = "none";
+      }
+      modal.style.display = "block";
+    }
+
+    // Función para cerrar la ventana emergente
+    function closeModal(modalType) {
+      var modal;
+      if (modalType === 'login') {
+        modal = document.getElementById("loginModal");
+      } else if (modalType === 'register') {
+        modal = document.getElementById("registerModal");
+      }
+      modal.style.display = "none";
+    }
+
+    // Función para avanzar al siguiente paso del registro
+    function nextStep() {
+      document.getElementById("step1").style.display = "none";
+      document.getElementById("step2").style.display = "block";
+    }
+
+  </script>
+</body>
+</html>
